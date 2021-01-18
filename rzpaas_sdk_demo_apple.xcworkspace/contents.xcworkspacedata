@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:rzpaas_sdk_demo_264_ios/rzpaas_sdk_demo_264_ios.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:rzpaas_sdk_demo_264_macos/rzpaas_sdk_demo_264_macos.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

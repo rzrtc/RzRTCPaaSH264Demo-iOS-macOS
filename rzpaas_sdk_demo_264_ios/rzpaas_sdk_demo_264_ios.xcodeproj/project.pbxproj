@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BF0EE46BF40F00892F207D6 /* Pods_rzpaas_sdk_demo_264_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D55EA5B13EAF82C8866BDAB /* Pods_rzpaas_sdk_demo_264_ios.framework */; };
+		A54D36F725A7EA77001563EC /* VideoChatLocalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D36F525A7EA77001563EC /* VideoChatLocalCell.swift */; };
+		A54D36F825A7EA77001563EC /* VideoChatLocalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54D36F625A7EA77001563EC /* VideoChatLocalCell.xib */; };
+		A54D36FB25A7EA89001563EC /* VideoChatRemoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D36F925A7EA89001563EC /* VideoChatRemoteCell.swift */; };
+		A54D36FC25A7EA89001563EC /* VideoChatRemoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54D36FA25A7EA89001563EC /* VideoChatRemoteCell.xib */; };
+		A54D3DF125A47180000B23D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3DF025A47180000B23D4 /* AppDelegate.swift */; };
+		A54D3DF525A47180000B23D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3DF425A47180000B23D4 /* ViewController.swift */; };
+		A54D3DF825A47180000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DF625A47180000B23D4 /* Main.storyboard */; };
+		A54D3DFA25A47183000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DF925A47183000B23D4 /* Assets.xcassets */; };
+		A54D3DFD25A47183000B23D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DFB25A47183000B23D4 /* LaunchScreen.storyboard */; };
+		A54D3E9425A59457000B23D4 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E9225A59457000B23D4 /* ChannelViewController.swift */; };
+		A54D3E9525A59457000B23D4 /* ChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E9325A59457000B23D4 /* ChannelViewController.xib */; };
+		A5588A5E25A712A90046EE2C /* VideoChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5A25A712A90046EE2C /* VideoChatManager.swift */; };
+		A5588A5F25A712A90046EE2C /* VideoChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5B25A712A90046EE2C /* VideoChatItem.swift */; };
+		A5588A6025A712A90046EE2C /* EngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5C25A712A90046EE2C /* EngineManager.swift */; };
+		A5588A6125A712A90046EE2C /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5D25A712A90046EE2C /* KeyCenter.swift */; };
+		A5AB7A9C25A7F8E4006CF0B6 /* RZAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB7A9B25A7F8E4006CF0B6 /* RZAlertHelper.swift */; };
+		A5AB7A9E25A7F8FE006CF0B6 /* RZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB7A9D25A7F8FE006CF0B6 /* RZAlertView.swift */; };
+		A5AB7AA025A7F912006CF0B6 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AB7A9F25A7F912006CF0B6 /* RZAlertView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D55EA5B13EAF82C8866BDAB /* Pods_rzpaas_sdk_demo_264_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rzpaas_sdk_demo_264_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5B50EC5C3D713EA136B241 /* Pods-rzpaas_sdk_demo_264_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_264_ios.release.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios.release.xcconfig"; sourceTree = "<group>"; };
+		A54D36F525A7EA77001563EC /* VideoChatLocalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatLocalCell.swift; sourceTree = "<group>"; };
+		A54D36F625A7EA77001563EC /* VideoChatLocalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoChatLocalCell.xib; sourceTree = "<group>"; };
+		A54D36F925A7EA89001563EC /* VideoChatRemoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatRemoteCell.swift; sourceTree = "<group>"; };
+		A54D36FA25A7EA89001563EC /* VideoChatRemoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoChatRemoteCell.xib; sourceTree = "<group>"; };
+		A54D3DED25A47180000B23D4 /* rzpaas_sdk_demo_264_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rzpaas_sdk_demo_264_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54D3DF025A47180000B23D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A54D3DF425A47180000B23D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A54D3DF725A47180000B23D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A54D3DF925A47183000B23D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A54D3DFC25A47183000B23D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A54D3DFE25A47183000B23D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54D3E2825A54962000B23D4 /* RZPaas_iOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RZPaas_iOS.xcframework; path = ../sdks/RZPaas_iOS.xcframework; sourceTree = "<group>"; };
+		A54D3E9225A59457000B23D4 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		A54D3E9325A59457000B23D4 /* ChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelViewController.xib; sourceTree = "<group>"; };
+		A5588A5A25A712A90046EE2C /* VideoChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatManager.swift; sourceTree = "<group>"; };
+		A5588A5B25A712A90046EE2C /* VideoChatItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatItem.swift; sourceTree = "<group>"; };
+		A5588A5C25A712A90046EE2C /* EngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineManager.swift; sourceTree = "<group>"; };
+		A5588A5D25A712A90046EE2C /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		A5AB7A9B25A7F8E4006CF0B6 /* RZAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZAlertHelper.swift; sourceTree = "<group>"; };
+		A5AB7A9D25A7F8FE006CF0B6 /* RZAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZAlertView.swift; sourceTree = "<group>"; };
+		A5AB7A9F25A7F912006CF0B6 /* RZAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RZAlertView.xib; sourceTree = "<group>"; };
+		C04CE988E30C580EB66148E0 /* Pods-rzpaas_sdk_demo_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_ios.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_ios/Pods-rzpaas_sdk_demo_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		D80646FF4017DF73877854F2 /* Pods-rzpaas_sdk_demo_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_ios.release.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_ios/Pods-rzpaas_sdk_demo_ios.release.xcconfig"; sourceTree = "<group>"; };
+		DF14570C6D0E8D05555B811B /* Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A54D3DEA25A47180000B23D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF0EE46BF40F00892F207D6 /* Pods_rzpaas_sdk_demo_264_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F46D1864404EE5EA6D189C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C04CE988E30C580EB66148E0 /* Pods-rzpaas_sdk_demo_ios.debug.xcconfig */,
+				D80646FF4017DF73877854F2 /* Pods-rzpaas_sdk_demo_ios.release.xcconfig */,
+				DF14570C6D0E8D05555B811B /* Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig */,
+				6A5B50EC5C3D713EA136B241 /* Pods-rzpaas_sdk_demo_264_ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		A54D3DE425A47180000B23D4 = {
+			isa = PBXGroup;
+			children = (
+				A5588A5925A712A90046EE2C /* share */,
+				A54D3DEF25A47180000B23D4 /* rzpaas_sdk_demo_ios */,
+				A54D3DEE25A47180000B23D4 /* Products */,
+				A54D3E2725A54961000B23D4 /* Frameworks */,
+				9F46D1864404EE5EA6D189C9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A54D3DEE25A47180000B23D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A54D3DED25A47180000B23D4 /* rzpaas_sdk_demo_264_ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A54D3DEF25A47180000B23D4 /* rzpaas_sdk_demo_ios */ = {
+			isa = PBXGroup;
+			children = (
+				A54D3DF425A47180000B23D4 /* ViewController.swift */,
+				A5588A4A25A6F9BA0046EE2C /* ChatView */,
+				A54D3DF625A47180000B23D4 /* Main.storyboard */,
+				A54D3DF925A47183000B23D4 /* Assets.xcassets */,
+				A54D3DFB25A47183000B23D4 /* LaunchScreen.storyboard */,
+				A54D3DFE25A47183000B23D4 /* Info.plist */,
+				A54D3DF025A47180000B23D4 /* AppDelegate.swift */,
+				A5AB7A9B25A7F8E4006CF0B6 /* RZAlertHelper.swift */,
+				A5AB7A9D25A7F8FE006CF0B6 /* RZAlertView.swift */,
+				A5AB7A9F25A7F912006CF0B6 /* RZAlertView.xib */,
+			);
+			path = rzpaas_sdk_demo_ios;
+			sourceTree = "<group>";
+		};
+		A54D3E2725A54961000B23D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A54D3E2825A54962000B23D4 /* RZPaas_iOS.xcframework */,
+				2D55EA5B13EAF82C8866BDAB /* Pods_rzpaas_sdk_demo_264_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5588A4A25A6F9BA0046EE2C /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				A54D3E9225A59457000B23D4 /* ChannelViewController.swift */,
+				A54D36F925A7EA89001563EC /* VideoChatRemoteCell.swift */,
+				A54D36FA25A7EA89001563EC /* VideoChatRemoteCell.xib */,
+				A54D36F525A7EA77001563EC /* VideoChatLocalCell.swift */,
+				A54D36F625A7EA77001563EC /* VideoChatLocalCell.xib */,
+				A54D3E9325A59457000B23D4 /* ChannelViewController.xib */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		A5588A5925A712A90046EE2C /* share */ = {
+			isa = PBXGroup;
+			children = (
+				A5588A5A25A712A90046EE2C /* VideoChatManager.swift */,
+				A5588A5B25A712A90046EE2C /* VideoChatItem.swift */,
+				A5588A5C25A712A90046EE2C /* EngineManager.swift */,
+				A5588A5D25A712A90046EE2C /* KeyCenter.swift */,
+			);
+			name = share;
+			path = ../share;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A54D3DEC25A47180000B23D4 /* rzpaas_sdk_demo_264_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A54D3E0125A47183000B23D4 /* Build configuration list for PBXNativeTarget "rzpaas_sdk_demo_264_ios" */;
+			buildPhases = (
+				744BC26AD19BB25848282DA3 /* [CP] Check Pods Manifest.lock */,
+				A54D3DE925A47180000B23D4 /* Sources */,
+				A54D3DEA25A47180000B23D4 /* Frameworks */,
+				A54D3DEB25A47180000B23D4 /* Resources */,
+				A95043E2B69EF28BB073F337 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rzpaas_sdk_demo_264_ios;
+			productName = rzpaas_sdk_demo_ios;
+			productReference = A54D3DED25A47180000B23D4 /* rzpaas_sdk_demo_264_ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A54D3DE525A47180000B23D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					A54D3DEC25A47180000B23D4 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = A54D3DE825A47180000B23D4 /* Build configuration list for PBXProject "rzpaas_sdk_demo_264_ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A54D3DE425A47180000B23D4;
+			productRefGroup = A54D3DEE25A47180000B23D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A54D3DEC25A47180000B23D4 /* rzpaas_sdk_demo_264_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A54D3DEB25A47180000B23D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A54D3DFD25A47183000B23D4 /* LaunchScreen.storyboard in Resources */,
+				A54D3DFA25A47183000B23D4 /* Assets.xcassets in Resources */,
+				A54D3E9525A59457000B23D4 /* ChannelViewController.xib in Resources */,
+				A5AB7AA025A7F912006CF0B6 /* RZAlertView.xib in Resources */,
+				A54D36F825A7EA77001563EC /* VideoChatLocalCell.xib in Resources */,
+				A54D36FC25A7EA89001563EC /* VideoChatRemoteCell.xib in Resources */,
+				A54D3DF825A47180000B23D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		744BC26AD19BB25848282DA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rzpaas_sdk_demo_264_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A95043E2B69EF28BB073F337 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A54D3DE925A47180000B23D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5588A6125A712A90046EE2C /* KeyCenter.swift in Sources */,
+				A5588A5F25A712A90046EE2C /* VideoChatItem.swift in Sources */,
+				A5AB7A9C25A7F8E4006CF0B6 /* RZAlertHelper.swift in Sources */,
+				A5588A5E25A712A90046EE2C /* VideoChatManager.swift in Sources */,
+				A5588A6025A712A90046EE2C /* EngineManager.swift in Sources */,
+				A54D36F725A7EA77001563EC /* VideoChatLocalCell.swift in Sources */,
+				A5AB7A9E25A7F8FE006CF0B6 /* RZAlertView.swift in Sources */,
+				A54D36FB25A7EA89001563EC /* VideoChatRemoteCell.swift in Sources */,
+				A54D3DF525A47180000B23D4 /* ViewController.swift in Sources */,
+				A54D3E9425A59457000B23D4 /* ChannelViewController.swift in Sources */,
+				A54D3DF125A47180000B23D4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A54D3DF625A47180000B23D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A54D3DF725A47180000B23D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A54D3DFB25A47183000B23D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A54D3DFC25A47183000B23D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A54D3DFF25A47183000B23D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A54D3E0025A47183000B23D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A54D3E0225A47183000B23D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF14570C6D0E8D05555B811B /* Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = VB8MVMJBU4;
+				INFOPLIST_FILE = rzpaas_sdk_demo_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duobei.rzpaas-sdk-demo-264-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A54D3E0325A47183000B23D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A5B50EC5C3D713EA136B241 /* Pods-rzpaas_sdk_demo_264_ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = VB8MVMJBU4;
+				INFOPLIST_FILE = rzpaas_sdk_demo_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duobei.rzpaas-sdk-demo-264-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A54D3DE825A47180000B23D4 /* Build configuration list for PBXProject "rzpaas_sdk_demo_264_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A54D3DFF25A47183000B23D4 /* Debug */,
+				A54D3E0025A47183000B23D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A54D3E0125A47183000B23D4 /* Build configuration list for PBXNativeTarget "rzpaas_sdk_demo_264_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A54D3E0225A47183000B23D4 /* Debug */,
+				A54D3E0325A47183000B23D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A54D3DE525A47180000B23D4 /* Project object */;
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelViewController" customModule="rzpaas_sdk_demo_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="channelIdLabel" destination="fDd-Wl-1dO" id="y6b-28-c98"/>
+                <outlet property="collectionView" destination="8Te-HF-gtA" id="nf4-4H-bqy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-L2-IkJ">
+                    <rect key="frame" x="0.0" y="804" width="414" height="58"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="频道ID：800900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-Wl-1dO">
+                            <rect key="frame" x="16" y="20.5" width="109" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.39215686274509803" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-YW-mdv">
+                            <rect key="frame" x="354" y="4" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="8Sn-cq-2Sh"/>
+                                <constraint firstAttribute="height" constant="50" id="uks-G9-Jr3"/>
+                            </constraints>
+                            <state key="normal" image="channel_leave_btn"/>
+                            <connections>
+                                <action selector="leaveChannelClick:" destination="-1" eventType="touchUpInside" id="vyd-d3-TC0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="oPj-YW-mdv" secondAttribute="trailing" constant="10" id="JXf-SB-pW2"/>
+                        <constraint firstItem="fDd-Wl-1dO" firstAttribute="centerY" secondItem="eOH-L2-IkJ" secondAttribute="centerY" id="P4h-a5-fIS"/>
+                        <constraint firstItem="fDd-Wl-1dO" firstAttribute="leading" secondItem="eOH-L2-IkJ" secondAttribute="leading" constant="16" id="We2-65-Wuj"/>
+                        <constraint firstAttribute="height" constant="58" id="dJr-iz-h9j"/>
+                        <constraint firstItem="oPj-YW-mdv" firstAttribute="centerY" secondItem="eOH-L2-IkJ" secondAttribute="centerY" id="t1d-WZ-lp0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dge-Rt-Gr3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="760"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8Te-HF-gtA">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
+                            <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WZY-7g-sjv">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="hso-4G-RYf"/>
+                                <outlet property="delegate" destination="-1" id="ZrC-1I-iyA"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="8Te-HF-gtA" firstAttribute="leading" secondItem="Dge-Rt-Gr3" secondAttribute="leading" id="ADM-nh-VVO"/>
+                        <constraint firstItem="8Te-HF-gtA" firstAttribute="top" secondItem="Dge-Rt-Gr3" secondAttribute="top" id="UvM-rn-dnF"/>
+                        <constraint firstAttribute="trailing" secondItem="8Te-HF-gtA" secondAttribute="trailing" id="hqk-Ub-Can"/>
+                        <constraint firstAttribute="bottom" secondItem="8Te-HF-gtA" secondAttribute="bottom" id="y7K-nS-H74"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eOH-L2-IkJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4LD-ex-mr0"/>
+                <constraint firstItem="Dge-Rt-Gr3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BvS-I1-WqD"/>
+                <constraint firstItem="eOH-L2-IkJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kab-kd-Rvi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eOH-L2-IkJ" secondAttribute="trailing" id="MUG-rk-VEO"/>
+                <constraint firstItem="eOH-L2-IkJ" firstAttribute="top" secondItem="Dge-Rt-Gr3" secondAttribute="bottom" id="TDB-d7-que"/>
+                <constraint firstItem="Dge-Rt-Gr3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V6T-OV-43f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dge-Rt-Gr3" secondAttribute="trailing" id="est-wR-B5O"/>
+            </constraints>
+            <point key="canvasLocation" x="-146.37681159420291" y="69.642857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="channel_leave_btn" width="24" height="24"/>
+    </resources>
+</document>
