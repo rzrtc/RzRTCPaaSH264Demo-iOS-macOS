@@ -66,11 +66,17 @@ class VideoChatManager: NSObject {
     }
     
     func remoteJoin(uid: String) {
-        
         if let _ = self.findItemBy(uid: uid) {
             //already join
             return
         }
+        
+        
+        if self.chatItems.count == 2 {
+            return
+        }
+        
+        
         let item = VideoChatItem.init()
         item.uid = uid
         item.canvas.uid = uid

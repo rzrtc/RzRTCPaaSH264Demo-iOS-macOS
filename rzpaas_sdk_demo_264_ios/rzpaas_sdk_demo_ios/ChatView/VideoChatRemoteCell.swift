@@ -32,16 +32,7 @@ class VideoChatRemoteCell: UICollectionViewCell {
     @IBOutlet weak var streamStopTipsLabel: UILabel!
     @IBOutlet weak var streamStopTipsImageView: UIImageView!
     @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
-    
-    // 是否接受远端视频流 按钮
-    @IBOutlet weak var videoMuteButton: UIButton!
-    
-    // 是否接受远端音频流 按钮
-    @IBOutlet weak var audioMuteButton: UIButton!
-    
-    // HD切换大小流按钮
-    @IBOutlet weak var HDBtn: UIButton!
-    
+        
     weak var delegate: VideoChatRemoteCellDelegate?
     weak var chatItem: VideoChatItem?
     
@@ -50,21 +41,7 @@ class VideoChatRemoteCell: UICollectionViewCell {
         
         item.addCanvsTo(view: self.videoView)
         self.uidLabel.text = "\(item.uid)"
-        
-        let audioImageName = (item.audioState.remoteNoSend || item.audioState.noReceive) ? "audio_remote_mute" : "audio_remote_unmute"
-        let audioTitle = item.audioState.noReceive ? "关闭" : "开启"
-        
-        
-        let videoImageName = (item.videoState.remoteNoSend || item.videoState.noReceive) ? "video_remote_mute" : "video_remote_unmute"
-        let videoTitle = item.videoState.noReceive ? "关闭" : "开启"
-        
-        self.audioMuteButton.setImage(UIImage.init(named: audioImageName), for: UIControl.State.normal)
-        self.audioMuteButton.setTitle(audioTitle, for: UIControl.State.normal)
-        
-        
-        self.videoMuteButton.setImage(UIImage.init(named: videoImageName), for: UIControl.State.normal)
-        self.videoMuteButton.setTitle(videoTitle, for: UIControl.State.normal)
-                
+                                
         if item.videoState.online == false {
             self.videoView.isHidden = true
             self.stateView.isHidden = false
@@ -103,12 +80,6 @@ class VideoChatRemoteCell: UICollectionViewCell {
         // Initialization code
         self.idContainerView.layer.cornerRadius = 10.0
         self.idContainerView.layer.masksToBounds = true
-        self.videoMuteButton.layer.cornerRadius = 12.0
-        self.videoMuteButton.layer.masksToBounds = true
-        self.audioMuteButton.layer.cornerRadius = 12.0
-        self.audioMuteButton.layer.masksToBounds = true
-        self.HDBtn.layer.cornerRadius = 12.0
-        self.HDBtn.layer.masksToBounds = true
     }
     
     @IBAction func onClickAudioMuteButton(_ sender: UIButton) {

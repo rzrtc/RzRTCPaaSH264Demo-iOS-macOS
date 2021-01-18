@@ -6,15 +6,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="VideoChatRemoteCell" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoChatRemoteCell" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target">
             <connections>
-                <outlet property="audioMuteButton" destination="MWd-fD-fcx" id="Suq-I5-ZCr"/>
                 <outlet property="noReceiveTipLabel" destination="7V9-5b-X22" id="9SJ-u3-aUb"/>
                 <outlet property="remoteNoSendTipLabel" destination="FDz-d9-AzU" id="De3-QB-rG5"/>
                 <outlet property="stateView" destination="kiH-lH-EKS" id="B2z-cu-RWF"/>
-                <outlet property="switchHDButton" destination="fwB-Og-9w6" id="p6I-MN-XXr"/>
                 <outlet property="uidLabel" destination="V6B-zj-9rY" id="cbm-5l-dAt"/>
-                <outlet property="videoMuteButton" destination="wYe-0r-DRb" id="EQk-aB-8aJ"/>
                 <outlet property="videoView" destination="BbT-Wd-14I" id="3aQ-zH-h6K"/>
             </connections>
         </customObject>
@@ -101,51 +98,6 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUX-br-doY">
-                    <rect key="frame" x="20" y="20" width="213" height="20"/>
-                    <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-0r-DRb">
-                            <rect key="frame" x="-7" y="-7" width="79" height="32"/>
-                            <buttonCell key="cell" type="push" title="推送" bezelStyle="rounded" image="cell_video_disable" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y5j-Cg-aC8">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="onClickVideoMuteButton:" target="XyX-ea-IIf" id="Uha-fL-DJV"/>
-                            </connections>
-                        </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MWd-fD-fcx">
-                            <rect key="frame" x="66" y="-7" width="79" height="32"/>
-                            <buttonCell key="cell" type="push" title="停止" bezelStyle="rounded" image="cell_remote_audio_disable" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lWT-lG-Tqk">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="onClickAudioMuteButton:" target="XyX-ea-IIf" id="Wdc-Cb-DjN"/>
-                            </connections>
-                        </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-Og-9w6">
-                            <rect key="frame" x="139" y="-7" width="81" height="32"/>
-                            <buttonCell key="cell" type="push" title="切换" bezelStyle="rounded" image="hd_on_icon" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VUv-GJ-Evv">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="onClickSwitchHDButton:" target="XyX-ea-IIf" id="uaj-8x-YjC"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <visibilityPriorities>
-                        <integer value="1000"/>
-                        <integer value="1000"/>
-                        <integer value="1000"/>
-                    </visibilityPriorities>
-                    <customSpacing>
-                        <real value="3.4028234663852886e+38"/>
-                        <real value="3.4028234663852886e+38"/>
-                        <real value="3.4028234663852886e+38"/>
-                    </customSpacing>
-                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="2Xs-Yw-B0P" firstAttribute="top" secondItem="BCc-DE-Eqj" secondAttribute="top" constant="20" symbolic="YES" id="3JT-2B-1ip"/>
@@ -155,32 +107,24 @@
                 <constraint firstItem="kiH-lH-EKS" firstAttribute="top" secondItem="BCc-DE-Eqj" secondAttribute="top" id="CGz-41-lxX"/>
                 <constraint firstItem="BbT-Wd-14I" firstAttribute="leading" secondItem="BCc-DE-Eqj" secondAttribute="leading" id="F7O-oW-l0x"/>
                 <constraint firstItem="2Xs-Yw-B0P" firstAttribute="leading" secondItem="BCc-DE-Eqj" secondAttribute="leading" constant="20" symbolic="YES" id="FCh-8Q-QJR"/>
-                <constraint firstItem="aUX-br-doY" firstAttribute="leading" secondItem="BCc-DE-Eqj" secondAttribute="leading" constant="20" symbolic="YES" id="Uzw-WW-RKo"/>
                 <constraint firstItem="BbT-Wd-14I" firstAttribute="top" secondItem="BCc-DE-Eqj" secondAttribute="top" id="b8C-4W-JdX"/>
                 <constraint firstAttribute="bottom" secondItem="BbT-Wd-14I" secondAttribute="bottom" id="iac-3Z-ec6"/>
-                <constraint firstAttribute="bottom" secondItem="aUX-br-doY" secondAttribute="bottom" constant="20" symbolic="YES" id="oPf-0F-ipn"/>
                 <constraint firstAttribute="trailing" secondItem="kiH-lH-EKS" secondAttribute="trailing" id="uPf-Fv-C4g"/>
             </constraints>
             <point key="canvasLocation" x="377" y="89"/>
         </customView>
-        <customObject id="XyX-ea-IIf" customClass="VideoChatRemoteCell" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target">
+        <customObject id="XyX-ea-IIf" customClass="VideoChatRemoteCell" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target">
             <connections>
-                <outlet property="audioMuteButton" destination="MWd-fD-fcx" id="ahf-T8-RKg"/>
                 <outlet property="noReceiveTipLabel" destination="7V9-5b-X22" id="DhV-rO-X7U"/>
                 <outlet property="remoteNoSendTipLabel" destination="FDz-d9-AzU" id="2w6-jp-6hl"/>
                 <outlet property="stateView" destination="kiH-lH-EKS" id="qut-PM-RFh"/>
-                <outlet property="switchHDButton" destination="fwB-Og-9w6" id="6Le-72-Kdb"/>
                 <outlet property="uidLabel" destination="V6B-zj-9rY" id="Ajh-oW-Gq5"/>
-                <outlet property="videoMuteButton" destination="wYe-0r-DRb" id="A5g-9R-QJY"/>
                 <outlet property="videoView" destination="BbT-Wd-14I" id="MHJ-QM-bDe"/>
                 <outlet property="view" destination="BCc-DE-Eqj" id="SXO-BU-0hF"/>
             </connections>
         </customObject>
     </objects>
     <resources>
-        <image name="cell_remote_audio_disable" width="16" height="16"/>
         <image name="cell_stop_state_icon" width="24" height="24"/>
-        <image name="cell_video_disable" width="16" height="16"/>
-        <image name="hd_on_icon" width="24" height="24"/>
     </resources>
 </document>

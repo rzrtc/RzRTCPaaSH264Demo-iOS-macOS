@@ -61,7 +61,7 @@ class EngineManager: NSObject {
         
         //设置编码参数
         let encodeConfig = RZVideoEncoderConfiguration.init()
-        encodeConfig.dimensions = RZVideoDimension640x480
+        encodeConfig.dimensions = RZVideoDimension1280x720
         encodeConfig.frameRate = RZVideoFrameRate.fps15.rawValue
         encodeConfig.orientationMode = .fixedLandscape
         encodeConfig.mirrorMode = .auto

@@ -14,17 +14,7 @@ class VideoChatLocalCell: UICollectionViewCell {
     @IBOutlet weak var uidLabel: UILabel!
     @IBOutlet weak var idContainerView: UIView!
 
-//    // 流加载状态展示
-//    @IBOutlet weak var streamStopTipsLabel: UILabel!
-//    @IBOutlet weak var streamStopTipsImageView: UIImageView!
-//    @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
-
-    // 前后置摄像头切换 按钮
-    @IBOutlet weak var cameraSwitchBtn: UIButton!
-    
-
-    @IBOutlet weak var stateView: UIView!
-    
+    @IBOutlet weak var stateView: UIView!    
     @IBOutlet weak var videoView: UIView! {
         didSet {
 //            videoView.wantsLayer = true
@@ -49,25 +39,12 @@ class VideoChatLocalCell: UICollectionViewCell {
             view.removeFromSuperview()
         }
     }
-    
-    @IBAction func onClickSwitchCameraButton(_ sender: UIButton) {
-        let ret = EngineManager.sharedEngineManager.switchCamera()
         
-        if (ret == 0) {
-            //切换成功
-            self.item?.isFront = !(self.item?.isFront)!
-            let title = self.item?.isFront == true ? "前置" : "后置"            
-            self.cameraSwitchBtn.setTitle(title, for: .normal)
-        }
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         idContainerView.layer.cornerRadius = 10.0
         idContainerView.layer.masksToBounds = true
-        cameraSwitchBtn.layer.cornerRadius = 12.0
-        cameraSwitchBtn.layer.masksToBounds = true
     }
     
 }

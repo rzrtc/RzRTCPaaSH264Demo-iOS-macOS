@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -674,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -705,14 +706,14 @@
         <!--Login View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="XfG-lQ-9wD" customClass="LoginViewController" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="XfG-lQ-9wD" customClass="LoginViewController" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl" customClass="RZMView">
                         <rect key="frame" x="0.0" y="0.0" width="1200" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-yF-8df">
-                                <rect key="frame" x="244" y="318" width="289" height="85"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="RZ Demo" id="yMX-pS-5Le">
+                                <rect key="frame" x="150" y="318" width="383" height="85"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="H264.Demo" id="yMX-pS-5Le">
                                     <font key="font" metaFont="system" size="72"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -777,7 +778,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-Iq-Qq6" userLabel="separate-line" customClass="RZMView" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-Iq-Qq6" userLabel="separate-line" customClass="RZMView" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="327" id="JbU-6Q-ANV"/>
@@ -844,7 +845,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="6hW-OO-mkU" userLabel="separate-line" customClass="RZMView" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="6hW-OO-mkU" userLabel="separate-line" customClass="RZMView" customModule="rzpaas_sdk_demo_264_macos" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="858-XO-26L"/>
