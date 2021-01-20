@@ -50,6 +50,7 @@ class EngineManager: NSObject {
     weak var delegate: EngineManagerDelegate?
     
     
+    let sourceManager:RZSourceManager = RZSourceManager()
     
     
     var channelId: String?
@@ -139,11 +140,13 @@ class EngineManager: NSObject {
     }
     
     func publish() {
-        self.rtcChannel?.publish()
+//        self.rtcChannel?.publish()        
+        self.sourceManager.start()
     }
     
     func unpublish()  {
-        self.rtcChannel?.unpublish()
+        self.sourceManager.stop()
+//        self.rtcChannel?.unpublish()
     }
 
 #if os(OSX)

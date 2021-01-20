@@ -4,3 +4,6 @@
 
 #import "RZMView.h"
 #import "RZVideoPlayView.h"
+#import "RZVideoCapturer.h"
+#import "RZSourceManager.h"
+#import "RZVideoDecoder.h"

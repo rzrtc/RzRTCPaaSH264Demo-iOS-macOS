@@ -55,6 +55,8 @@ class VideoChatManager: NSObject {
         }
         self.chatItems.insert(localItem, at: 0)
         self.delegate?.shouldAddItem?(item: localItem, at: 0)
+        
+        EngineManager.sharedEngineManager.sourceManager.masterVideoSink = localItem
     }
     
     /*

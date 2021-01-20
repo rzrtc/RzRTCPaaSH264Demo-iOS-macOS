@@ -53,6 +53,8 @@
 		A5F26DBD25B7D72B001E965A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F26DBC25B7D72B001E965A /* libz.tbd */; };
 		A5F26DC025B7D733001E965A /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F26DBF25B7D733001E965A /* libbz2.tbd */; };
 		A5F26DC325B7D739001E965A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F26DC225B7D739001E965A /* libiconv.tbd */; };
+		A5F26DEA25B82991001E965A /* RZSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26DE925B82991001E965A /* RZSourceManager.m */; };
+		A5F26DEE25B82AD1001E965A /* RZMVideoSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26DED25B82AD1001E965A /* RZMVideoSourceImp.m */; };
 		BEFFD34C8F165727040DE01C /* Pods_rzpaas_sdk_demo_264_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B73DA879213DE1199E03866 /* Pods_rzpaas_sdk_demo_264_macos.framework */; };
 /* End PBXBuildFile section */
 
@@ -264,6 +266,10 @@
 		A5F26DBC25B7D72B001E965A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A5F26DBF25B7D733001E965A /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		A5F26DC225B7D739001E965A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		A5F26DE825B82991001E965A /* RZSourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZSourceManager.h; sourceTree = "<group>"; };
+		A5F26DE925B82991001E965A /* RZSourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZSourceManager.m; sourceTree = "<group>"; };
+		A5F26DEC25B82AD1001E965A /* RZMVideoSourceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMVideoSourceImp.h; sourceTree = "<group>"; };
+		A5F26DED25B82AD1001E965A /* RZMVideoSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMVideoSourceImp.m; sourceTree = "<group>"; };
 		F515F9E467155C176B937754 /* Pods-rzpaas_sdk_demo_macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_macos.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -373,6 +379,10 @@
 				A5F26DAA25B7D6DD001E965A /* Capturer */,
 				A5F26DB125B7D6DD001E965A /* codec */,
 				A5588A5125A7127B0046EE2C /* VideoChatManager.swift */,
+				A5F26DEC25B82AD1001E965A /* RZMVideoSourceImp.h */,
+				A5F26DED25B82AD1001E965A /* RZMVideoSourceImp.m */,
+				A5F26DE825B82991001E965A /* RZSourceManager.h */,
+				A5F26DE925B82991001E965A /* RZSourceManager.m */,
 				A5588A5225A7127B0046EE2C /* VideoChatItem.swift */,
 				A5588A5325A7127B0046EE2C /* EngineManager.swift */,
 				A5588A5425A7127B0046EE2C /* KeyCenter.swift */,
@@ -853,8 +863,10 @@
 				A5356E1925A84CD900CB1527 /* RZAlertHelper.swift in Sources */,
 				86B6CA3625A5642B00EC3CDF /* VideoChatViewController.swift in Sources */,
 				866DB27D25A5681500C360C5 /* VideoChatLocalCell.swift in Sources */,
+				A5F26DEA25B82991001E965A /* RZSourceManager.m in Sources */,
 				86B6CA2A25A55B6E00EC3CDF /* RZMView.m in Sources */,
 				A5588A5525A7127B0046EE2C /* VideoChatManager.swift in Sources */,
+				A5F26DEE25B82AD1001E965A /* RZMVideoSourceImp.m in Sources */,
 				A5F26DB725B7D6DD001E965A /* RZVideoCapturer.m in Sources */,
 				A5588A5825A7127B0046EE2C /* KeyCenter.swift in Sources */,
 				A5F26DBA25B7D6DD001E965A /* RZVideoDecoder.m in Sources */,
