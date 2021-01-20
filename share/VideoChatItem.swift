@@ -41,6 +41,9 @@ class VideoChatItem: NSObject {
     let audioState = StreamState()
     let videoState = VideoStreamState()
     
+    let videoPlayView: RZVideoPlayView = RZVideoPlayView()
+    
+    
     //video canvas
     let canvas: RZRtcVideoCanvas = {
         let canvas = RZRtcVideoCanvas.init()
@@ -66,6 +69,38 @@ class VideoChatItem: NSObject {
         let bottom = NSLayoutConstraint.init(item: canvasView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0)
         view.addConstraints([left, rigth, top, bottom])
         
+    }
+    
+}
+
+
+extension VideoChatItem: RZVideoSinkProtocol {
+    func shouldInitialize() -> Bool {
+        return true
+    }
+    
+    func shouldStart() -> Bool {
+        return true
+    }
+    
+    func shouldStop() {
+        
+    }
+    
+    func shouldDispose() {
+        
+    }
+    
+    func bufferType() -> RZVideoBufferType {
+        return .H264
+    }
+    
+    func pixelFormat() -> RZVideoPixelFormat {
+        return .I420
+    }
+    
+    func renderRawData(_ rawData: UnsafeMutableRawPointer, size: CGSize, pixelFormat: RZVideoPixelFormat, timestamp: Int) {
+        self.videoPlayView.displayI420(rawData, frameWidth: size.width, frameHeight: size.height)
     }
     
 }

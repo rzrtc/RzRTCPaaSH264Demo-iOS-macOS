@@ -49,6 +49,9 @@ class EngineManager: NSObject {
     let chatManager = VideoChatManager.init()
     weak var delegate: EngineManagerDelegate?
     
+    
+    
+    
     var channelId: String?
     
     override init() {
@@ -117,6 +120,10 @@ class EngineManager: NSObject {
     
     func setupLocalVideoCanvas(_ canvas: RZRtcVideoCanvas) {
         self.rtcEngine.setupLocalVideo(canvas)
+    }
+    
+    func setLocalVideoRenderer(_ canvas: RZVideoSinkProtocol) {
+        self.rtcEngine.setLocalVideoRenderer(canvas)
     }
     
     func setupRemoteVideoCanvas(_ canvas: RZRtcVideoCanvas)  {

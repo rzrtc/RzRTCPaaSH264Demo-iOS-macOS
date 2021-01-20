@@ -59,7 +59,8 @@ class VideoChatViewController: NSViewController {
         /*
          设置本地用户的视频容器
          */
-        engineManager.setupLocalVideoCanvas(engineManager.chatManager.localItem.canvas)
+//        engineManager.setupLocalVideoCanvas(engineManager.chatManager.localItem.canvas)
+        engineManager.setLocalVideoRenderer(engineManager.chatManager.localItem)
         
         self.channelIdLabel.stringValue = "频道ID: \(engineManager.channelId ?? "")"
     }

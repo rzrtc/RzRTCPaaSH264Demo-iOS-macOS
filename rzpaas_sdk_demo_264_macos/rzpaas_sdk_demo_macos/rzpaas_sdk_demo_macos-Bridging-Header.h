@@ -3,3 +3,4 @@
 //
 
 #import "RZMView.h"
+#import "RZVideoPlayView.h"
