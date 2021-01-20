@@ -1,5 +1,5 @@
 source 'https://cdn.cocoapods.org/'
-workspace 'rzpaas_sdk_demo_apple'
+workspace 'rzpaas_sdk_demo_264_apple'
 
 
 use_frameworks!
