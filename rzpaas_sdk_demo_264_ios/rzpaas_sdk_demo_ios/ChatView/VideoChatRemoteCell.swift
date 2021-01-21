@@ -39,7 +39,7 @@ class VideoChatRemoteCell: UICollectionViewCell {
     func configWith(item: VideoChatItem) {
         self.chatItem = item
         
-        item.addCanvsTo(view: self.videoView)
+//        item.addCanvsTo(view: self.videoView)
         self.uidLabel.text = "\(item.uid)"
                                 
         if item.videoState.online == false {

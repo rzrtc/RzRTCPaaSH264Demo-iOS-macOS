@@ -21,7 +21,6 @@ class ViewController: UIViewController, RZRtcEngineDelegate, RZRtcChannelDelegat
         }
     }
     
-    
     var inJoinState = false
     
     let keyForUid = "com.paas.demo.key.uid"
@@ -48,10 +47,8 @@ class ViewController: UIViewController, RZRtcEngineDelegate, RZRtcChannelDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.loadOldInput()
-        
+
         //要求启动获取权限
         AVCaptureDevice.requestAccess(for: .audio) { (ret) in
             if ret {
@@ -78,64 +75,27 @@ class ViewController: UIViewController, RZRtcEngineDelegate, RZRtcChannelDelegat
     
     // 点击进入频道按钮
     @IBAction func btnClick(_ sender: Any) {
-        
         if self.inJoinState {
             return
         }
         
-        //        self.validateInput()
-        
         let uid = self.userIdTextField.text
         let channelId = self.channelIdTextField.text
         
-        //        if uid.isEmpty || channelId.isEmpty {
-        //            return
-        //        }
-        
         self.saveNewInput()
-        
         EngineManager.sharedEngineManager.delegate = self
-        
         var ret = EngineManager.sharedEngineManager.createChannel(channelId: channelId!)
         if !ret {
             return
         }
-        
-        
         ret = EngineManager.sharedEngineManager.joinChannel(by: uid!)
         if !ret {
             return
         }
         self.inJoinState = true
-        
     }
 }
 
-
-extension ViewController {
-    
-    func validateInput() {
-        //        let normalColor = UIColor.white
-        //        let emptyColor = UIColor.init(hex: "ffa62f")!
-        
-        //        if ((self.userIdTextField.text?.isEmpty) != nil) {
-        //            self.uidTipLabel.isHidden = false
-        //            self.uidLine.backgroundColor = emptyColor
-        //        } else {
-        //            self.uidTipLabel.isHidden = true
-        //            self.uidLine.backgroundColor = normalColor
-        //        }
-        //
-        //        if self.channelIdInput.stringValue.isEmpty {
-        //            self.channelIdTipLabel.isHidden = false
-        //            self.channelIdLine.backgroundColor = emptyColor
-        //        } else {
-        //            self.channelIdTipLabel.isHidden = true
-        //            self.channelIdLine.backgroundColor = normalColor
-        //        }
-    }
-    
-}
 
 extension ViewController: EngineManagerDelegate {
     func shouldHandleInvalidChannelId() {

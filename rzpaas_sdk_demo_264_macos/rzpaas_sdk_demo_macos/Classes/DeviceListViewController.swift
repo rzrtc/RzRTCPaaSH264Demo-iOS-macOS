@@ -18,12 +18,10 @@ class DeviceListViewController: NSViewController {
     let  mics = EngineManager.sharedEngineManager.allMicrophone()
     let  speakers = EngineManager.sharedEngineManager.allSpeakers()
     
-    
     let currentCam = EngineManager.sharedEngineManager.currentDevice(type: .videoCapture)
     let currentMic = EngineManager.sharedEngineManager.currentDevice(type: .audioRecording)
     let currentSpeker = EngineManager.sharedEngineManager.currentDevice(type: .audioPlayout)
     
-
     deinit {
         print(#function)
     }

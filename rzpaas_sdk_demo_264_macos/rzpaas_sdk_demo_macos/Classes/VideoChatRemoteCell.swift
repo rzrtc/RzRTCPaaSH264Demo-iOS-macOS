@@ -48,7 +48,7 @@ class VideoChatRemoteCell: NSCollectionViewItem {
     func configWith(item: VideoChatItem) {
         self.chatItem = item
         
-        item.addCanvsTo(view: self.videoView)
+//        item.addCanvsTo(view: self.videoView)
         self.uidLabel.stringValue = "\(item.uid)"
      
         if item.videoState.noReceive || item.videoState.remoteNoSend {

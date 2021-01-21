@@ -48,6 +48,11 @@ static uint64_t rz_milliseconds(void)
         _videoCapturer = [[RZVideoCapturer alloc] init];
         _videoCapturer.delegate = self;
         
+        DbyCapturerConfig config;
+        config.frameRate = 15;
+        config.dimension = CGSizeMake(1280, 720);
+        [_videoCapturer setVideoConfig:config];
+        
         //编解码
         _videoEncoder = [[RZVideoEncoder alloc] initWithDelegate:self];
         _videoDecoder = [[RZVideoDecoder alloc] initWithDelegate:self];
@@ -92,7 +97,8 @@ static uint64_t rz_milliseconds(void)
 
     //本地预览
     if (self.masterVideoSink) {
-        [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 timestamp:timestamp];
+//        [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 timestamp:timestamp];
+        [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 keyframe:isKeyFrame timestamp:timestamp];
     }
 
 //    [self.videoDecoder decodeH264:h264Data length:length timestamp:timestamp];

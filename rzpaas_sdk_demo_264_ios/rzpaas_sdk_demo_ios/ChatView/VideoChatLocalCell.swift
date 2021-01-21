@@ -25,7 +25,7 @@ class VideoChatLocalCell: UICollectionViewCell {
     weak var item: VideoChatItem?
     func configWith(item: VideoChatItem) {
         self.item = item
-        item.addCanvsTo(view: self.videoView)
+//        item.addCanvsTo(view: self.videoView)
         self.uidLabel.text = "\(item.uid) (我)"
         
         self.videoView.isHidden = false

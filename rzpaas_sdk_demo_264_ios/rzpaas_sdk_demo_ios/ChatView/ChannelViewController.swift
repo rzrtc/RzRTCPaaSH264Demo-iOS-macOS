@@ -12,33 +12,27 @@ class ChannelViewController: UIViewController{
     var inLeaveState = false
     var isKickedOff = false
     
-    enum CellIdentifier: String {
-        case local = "VideoChatLocalCell"
-        case remote = "VideoChatRemoteCell"
-    }
+    @IBOutlet weak var localDisplayViewContainer: UIView!
+    @IBOutlet weak var remoteDisplayViewContainer: UIView!
+
+    @IBOutlet weak var localDisplayView: RZVideoPlayView!
+    @IBOutlet weak var remoteDisplayView: RZVideoPlayView!
     
-    
-    @IBOutlet weak var collectionView: UICollectionView!{
+    @IBOutlet weak var remoteIdContainer: UIView!{
         didSet {
-            
-            collectionView.register(UINib.init(nibName: CellIdentifier.local.rawValue, bundle: nil),
-                                    forCellWithReuseIdentifier: .init(CellIdentifier.local.rawValue))
-            collectionView.register(UINib.init(nibName: CellIdentifier.remote.rawValue, bundle: nil),
-                                    forCellWithReuseIdentifier: .init(CellIdentifier.remote.rawValue))
-            
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            
-            let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-            let cellWidth = (UIScreen.main.bounds.size.width-2*3)/2.0
-            layout.itemSize = CGSize.init(width: cellWidth, height: 140.0)
-            layout.minimumLineSpacing = 2;
-            layout.minimumInteritemSpacing = 2;
-            layout.sectionInset = UIEdgeInsets.init(top: 2, left: 2, bottom: 2, right: 2)
-            
-            self.collectionView.collectionViewLayout = layout
+            self.remoteIdContainer.layer.cornerRadius = 12.0;
+            self.remoteIdContainer.layer.masksToBounds = true;
         }
     }
+    @IBOutlet weak var localIdContainer: UIView!{
+        didSet {
+            self.localIdContainer.layer.cornerRadius = 12.0;
+            self.localIdContainer.layer.masksToBounds = true;
+        }
+    }
+    @IBOutlet weak var localIdLabel: UILabel!
+    @IBOutlet weak var remoteIdLabel: UILabel!
+    
     
     @IBOutlet weak var channelIdLabel: UILabel!
     
@@ -57,10 +51,13 @@ class ChannelViewController: UIViewController{
         /*
          设置本地用户的视频容器
          */
-        engineManager.setupLocalVideoCanvas(engineManager.chatManager.localItem.canvas)
+        engineManager.chatManager.localItem.videoPlayView = self.localDisplayView
+        engineManager.chatManager.remoteItem.videoPlayView = self.remoteDisplayView
+        
+        engineManager.setLocalVideoRenderer(engineManager.chatManager.localItem)
         
         self.channelIdLabel.text = "频道ID: \(engineManager.channelId ?? "")"
-        
+        self.localIdLabel.text = "\(engineManager.chatManager.localItem.uid)(我)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,9 +122,7 @@ extension ChannelViewController {
          */
         EngineManager.sharedEngineManager.destroyChannel()
         EngineManager.sharedEngineManager.setupLocalVideoCanvas(.init())
-        self.backToLoginPage()
-        
-        
+        self.backToLoginPage()        
     }
     
     func backToLoginPage() {
@@ -137,28 +132,6 @@ extension ChannelViewController {
     
 }
 
-
-
-extension ChannelViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return EngineManager.sharedEngineManager.chatManager.chatItems.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let chatItem = EngineManager.sharedEngineManager.chatManager.chatItems[indexPath.item]
-        if chatItem.isLocal {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.local.rawValue, for: indexPath) as! VideoChatLocalCell
-            cell.configWith(item: chatItem)
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.remote.rawValue, for: indexPath) as! VideoChatRemoteCell
-            cell.configWith(item: chatItem)
-            cell.delegate = self
-            return cell
-        }
-    }
-}
 
 extension ChannelViewController:EngineManagerDelegate {
     func shouldHandleKickOff() {
@@ -228,47 +201,20 @@ extension ChannelViewController:EngineManagerDelegate {
     }
 }
 
-
-extension ChannelViewController:VideoChatManagerDelegate {
-    func shouldAddItem(item: VideoChatItem, at Index: NSInteger) {
-        self.collectionView.insertItems(at: [IndexPath.init(item: Index, section: 0)])
+extension ChannelViewController: VideoChatManagerDelegate {
         
-    }
-    
-    func shouldRemoveItem(item: VideoChatItem, at Index: NSInteger) {
-        self.collectionView.deleteItems(at: [IndexPath.init(item: Index, section: 0)])
-    }
-    
-    func shouldReloadItem(item: VideoChatItem, at Index: NSInteger) {
-        self.collectionView.reloadItems(at: [IndexPath.init(item: Index, section: 0)])
-    }
-    
-    func videoOnlineStateChange(item: VideoChatItem, at Index: NSInteger, online: Bool) {
-        if !online || item.isLocal{
+    func videoOnlineStateChange(online: Bool) {
+        if !online{
+            self.remoteDisplayViewContainer.isHidden = true
             return
         }
-        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item.canvas)
-    }
-    
-    func shouldReloadAll() {
-        self.collectionView.reloadData()
+        let item = EngineManager.sharedEngineManager.chatManager.remoteItem
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item,uid: item.uid,streamName: "first");
+        self.remoteIdLabel.text = "\(item.uid)"
+        self.remoteDisplayViewContainer.isHidden = false
     }
     
 }
 
-extension ChannelViewController : VideoChatRemoteCellDelegate {
-    func onClickAudioMute(sender: UIButton, item: VideoChatItem) {
-        let nextState = !item.audioState.noReceive
-        EngineManager.sharedEngineManager.muteRemoteAudio(uid: item.uid, mute: nextState)        
-    }
-    
-    func onClickVideoMute(sender: UIButton, item: VideoChatItem) {
-        let nextState = !item.videoState.noReceive
-        EngineManager.sharedEngineManager.muteRemoteVideo(uid: item.uid, mute: nextState)
-    }
-    
-    func onClickSwitchHD(sender: UIButton, item: VideoChatItem) {
-        let nextState = !item.videoState.isHD
-        EngineManager.sharedEngineManager.switchDualSteam(uid: item.uid, to: nextState)
-    }
-}
+
+

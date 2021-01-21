@@ -174,7 +174,7 @@
     _context->codec_type = AVMEDIA_TYPE_VIDEO;
     _context->pix_fmt = AV_PIX_FMT_NV12;
     
-    _context->bit_rate = 400000;
+    _context->bit_rate = 1200 * 1024;
     _context->width = config.dimension.width;
     _context->height = config.dimension.height;
     

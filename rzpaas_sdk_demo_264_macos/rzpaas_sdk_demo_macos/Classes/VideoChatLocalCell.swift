@@ -20,7 +20,7 @@ class VideoChatLocalCell: NSCollectionViewItem {
     weak var item: VideoChatItem?
     func configWith(item: VideoChatItem) {
         self.item = item
-        item.addCanvsTo(view: self.videoView)
+//        item.addCanvsTo(view: self.videoView)
         self.uidLabel.stringValue = "\(item.uid) (我)"
     }
     

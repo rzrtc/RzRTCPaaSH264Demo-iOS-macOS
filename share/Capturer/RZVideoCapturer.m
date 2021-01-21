@@ -320,9 +320,9 @@ typedef NS_ENUM(NSInteger, AVCamSetupResult) {
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
     //这里需要做一下丢帧处理
-//    if ([self shouldDisposeBuffer:sampleBuffer]) {
-//        return;
-//    }
+    if ([self shouldDisposeBuffer:sampleBuffer]) {
+        return;
+    }
     
 #if TARGET_OS_OSX
     BOOL isFront = YES;

@@ -10,7 +10,7 @@ target 'rzpaas_sdk_demo_264_ios' do
 
     pod 'IQKeyboardManagerSwift', '~> 6.5.6'
     pod 'SnapKit', '~> 5.0.0'
-    pod 'RZPaas_iOS'
+    #pod 'RZPaas_iOS'
 end
 
 
@@ -19,5 +19,5 @@ target 'rzpaas_sdk_demo_264_macos' do
     platform :osx, "10.12"    
     project 'rzpaas_sdk_demo_264_macos/rzpaas_sdk_demo_264_macos'
     pod 'SnapKit', '~> 5.0.0'
-    pod 'RZPaas_macOS'
+    #pod 'RZPaas_macOS'
 end

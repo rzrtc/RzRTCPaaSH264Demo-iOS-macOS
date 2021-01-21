@@ -38,8 +38,6 @@ func runOnMainThread(_ work: @escaping ()->()) {
     @objc optional func shouldHandleDeviceNoPermission()
 }
 
-
-
 class EngineManager: NSObject {
     
     static let sharedEngineManager: EngineManager = EngineManager()
@@ -49,9 +47,9 @@ class EngineManager: NSObject {
     let chatManager = VideoChatManager.init()
     weak var delegate: EngineManagerDelegate?
     
-    
     let sourceManager:RZSourceManager = RZSourceManager()
-    
+    var videoStream: RZRtcVideoStream!
+    var encodeConfig:RZVideoEncoderConfiguration!
     
     var channelId: String?
     
@@ -69,6 +67,8 @@ class EngineManager: NSObject {
         encodeConfig.frameRate = RZVideoFrameRate.fps15.rawValue
         encodeConfig.orientationMode = .fixedLandscape
         encodeConfig.mirrorMode = .auto
+        
+        self.encodeConfig = encodeConfig
         
         rtcEngine.setVideoEncoderConfiguration(encodeConfig)
         rtcEngine.setLocalRenderMode(.fit, mirrorMode: .auto)
@@ -107,10 +107,15 @@ class EngineManager: NSObject {
         return true
     }
     
+    func createVideoStream() {
+        self.videoStream = self.rtcChannel?.setupCustomVideoSource(self.sourceManager.masterVideoSource, streamName: "first", bufferType: RZVideoBufferType.H264, delegate: self, encodeConfig: self.encodeConfig)
+        
+        self.videoStream.setVideoEncoderConfiguration(self.encodeConfig)
+    }
+    
     func leaveChannel() {
         self.rtcChannel?.leave()
     }
-    
     
     func enableLocalAudio(enable: Bool) {
         self.rtcEngine.enableLocalAudio(enable)
@@ -126,9 +131,9 @@ class EngineManager: NSObject {
     func setLocalVideoRenderer(_ canvas: RZVideoSinkProtocol) {
         self.rtcEngine.setLocalVideoRenderer(canvas)
     }
-    
-    func setupRemoteVideoCanvas(_ canvas: RZRtcVideoCanvas)  {
-        self.rtcChannel?.setupRemoteVideo(canvas)
+        
+    func setupRemoteVideoCanvas(_ canvas: RZVideoSinkProtocol, uid:String, streamName:String)  {
+        self.rtcChannel?.setRemoteVideoRenderer(canvas, uid: uid, streamName: streamName)
     }
     
     func muteRemoteAudio(uid: String, mute: Bool)  {
@@ -140,13 +145,15 @@ class EngineManager: NSObject {
     }
     
     func publish() {
-//        self.rtcChannel?.publish()        
         self.sourceManager.start()
+        self.videoStream.publish()
+        self.rtcChannel?.publish(.audio)
     }
     
     func unpublish()  {
         self.sourceManager.stop()
-//        self.rtcChannel?.unpublish()
+        self.videoStream.unPublish()
+        self.rtcChannel?.unpublish(.audio)
     }
 
 #if os(OSX)
@@ -279,8 +286,9 @@ extension EngineManager: RZRtcChannelDelegate {
     
     func rtcChannel(_ rtcChannel: RZRtcChannel, didJoinChannelWithUid uid: String, elapsed: Int) {
         runOnMainThread {
+            self.createVideoStream()
             self.chatManager.localJoin(uid: uid)
-            self.delegate?.shouldHandleJoinSuccess?()
+            self.delegate?.shouldHandleJoinSuccess?()            
         }
     }
 
@@ -388,15 +396,11 @@ extension EngineManager: RZRtcChannelDelegate {
                 self.chatManager.remoteVideoSendStateChange(uid: uid, state: true)
             }
         }
-        
-        
     }
-    
-    
+        
     func rtcChannel(_ rtcChannel: RZRtcChannel, connectionChangedTo state: RZConnectionStateType, reason: RZConnectionChangedReason) {
-    
+        
         if state == .failed {
-            
             if reason == .changedRejectedByServer {
                 //kicked off
                 runOnMainThread {
@@ -425,5 +429,23 @@ extension EngineManager: RZRtcChannelDelegate {
 }
 
 
-
+extension EngineManager : RZRtcVideoStreamDelegate {
+    
+    func videoStream(_ videoStream: RZRtcVideoStream, onVideoPublishStateChangedTo state: RZStreamPublishState, elapsed: Int) {
+        
+    }
+    
+    func videoStream(_ videoStream: RZRtcVideoStream, onLocalVideoStateChangedTo state: RZLocalVideoStreamState, elapsed: Int) {
+        
+    }
+    
+    func videoStream(_ videoStream: RZRtcVideoStream, onFirstVideoFramePublishedElapsed elapsed: Int) {
+        
+    }
+    
+    func videoStream(_ videoStream: RZRtcVideoStream, onVideoSizeChanged size: CGSize) {
+        
+    }
+    
+}
 
