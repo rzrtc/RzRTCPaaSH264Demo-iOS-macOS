@@ -25,12 +25,10 @@ class VideoChatItem: NSObject {
 
     class StreamState {
         var online = false
-        var remoteNoSend = true
-        var noReceive = false
     }
     
     class VideoStreamState : StreamState{
-        var isHD = true
+        var streamName = ""
     }
 
     var uid: String = ""
@@ -105,7 +103,7 @@ extension VideoChatItem: RZVideoSinkProtocol {
     }
         
     func renderPacket(_ packet: UnsafeMutableRawPointer, length: Int, bufferType: RZVideoBufferType, keyframe: Bool, timestamp: Int) {
-        self.videoDecoder.decodeH264(packet, length: Int32(length), timestamp: Double(timestamp))
+        self.videoDecoder.decodeH264(packet, length: Int32(length), keyframe: keyframe, timestamp: Double(timestamp))
     }
     
 }

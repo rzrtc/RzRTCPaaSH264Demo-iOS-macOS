@@ -37,7 +37,7 @@ typedef enum : NSUInteger {
 
 - (instancetype)initWithDelegate:(id<RZVideoDecoderDelegate>)delegate;
 
-- (void)decodeH264:(void *)packet length:(int)length timestamp:(NSTimeInterval)timestamp;
+- (void)decodeH264:(void *)packet length:(int)length keyframe:(BOOL)keyframe timestamp:(NSTimeInterval)timestamp;
 
 @end
 

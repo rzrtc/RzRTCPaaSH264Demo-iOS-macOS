@@ -80,11 +80,12 @@ class VideoChatManager: NSObject {
     }
     
     
-    func remoteVideoOnlineStateChange(uid: String, online: Bool) {
+    func remoteVideoOnlineStateChange(uid: String, online: Bool, streamName:String) {
         if self.remoteItem.uid != uid {
             return
         }
         self.remoteItem.videoState.online = online
+        self.remoteItem.videoState.streamName = streamName
         self.delegate?.videoOnlineStateChange?(online: online)
     }
     

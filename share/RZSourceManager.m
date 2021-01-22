@@ -88,50 +88,16 @@ static uint64_t rz_milliseconds(void)
 
 - (void)videoEncoder:(nonnull RZVideoEncoder *)videoEncoder didEncodeH264:(nonnull void *)h264Data dataLength:(int)length isKeyFrame:(BOOL)isKeyFrame timestamp:(NSTimeInterval)timestamp
 {
-//    NSLog(@"%s, lenght = %d, isKey = %d, timestamp = %f", __FUNCTION__, length, isKeyFrame, timestamp);
-    
     //发送
     if (self.masterVideoSource.consumer) {
         [self.masterVideoSource.consumer consumePacket:h264Data length:length bufferType:RZVideoBufferTypeH264 isKeyframe:isKeyFrame timestamp:timestamp];
     }
-
+    
     //本地预览
     if (self.masterVideoSink) {
-//        [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 timestamp:timestamp];
         [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 keyframe:isKeyFrame timestamp:timestamp];
     }
-
-//    [self.videoDecoder decodeH264:h264Data length:length timestamp:timestamp];
 }
-
-//- (void)videoDecoder:(RZVideoDecoder *)videoDecoder
-//  receiveDecodedData:(uint8_t * _Nonnull *)data
-//           yuvStride:(int *)yuvStride
-//               width:(int)width
-//              height:(int)height
-//          pix_format:(RZYUVType)pix_format
-//{
-////    NSLog(@"%s, width = %d, heigth = %d, format = %@", __FUNCTION__, width, height, pix_format == RZYUVTypeNV12 ? @"nv12" : @"I420" );
-//
-//    if (pix_format == RZYUVTypeI420) {
-//
-//        uint8_t *y =  data[0];
-//        uint8_t *u =  data[1];
-//        uint8_t *v =  data[2];
-//        int stride_y = yuvStride[0];
-//        int stride_u = yuvStride[1];
-//        int stride_v = yuvStride[2];
-//
-//        [self.playView displayI420:y
-//                                 u:u
-//                                 v:v
-//                          stride_y:stride_y
-//                          stride_u:stride_u
-//                          stride_v:stride_v
-//                             width:width
-//                            height:height];
-//    }
-//}
 
 
 @end

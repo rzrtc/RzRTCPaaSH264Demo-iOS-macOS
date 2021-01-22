@@ -46,7 +46,7 @@
     return self;
 }
 
-- (void)decodeH264:(void *)packet length:(int)length timestamp:(NSTimeInterval)timestamp {
+- (void)decodeH264:(void *)packet length:(int)length keyframe:(BOOL)keyframe timestamp:(NSTimeInterval)timestamp {
     
     if (!packet) {
         return;

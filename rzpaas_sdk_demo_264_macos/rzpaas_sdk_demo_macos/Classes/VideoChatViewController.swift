@@ -110,7 +110,7 @@ extension VideoChatViewController: VideoChatManagerDelegate {
         }
 
         let item = EngineManager.sharedEngineManager.chatManager.remoteItem
-        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item,uid: item.uid,streamName: "first");
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item,uid: item.uid,streamName: item.videoState.streamName);
         self.remoteIdLabel.stringValue = "\(item.uid)"        
         self.remoteDisplayViewContainer.isHidden = false
     }

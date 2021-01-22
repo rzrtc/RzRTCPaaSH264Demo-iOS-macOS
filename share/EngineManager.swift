@@ -314,7 +314,6 @@ extension EngineManager: RZRtcChannelDelegate {
     
     func rtcChannel(_ rtcChannel: RZRtcChannel, onAudioSubscribeStateChangedOf uid: String, newState state: RZStreamSubscribeState, elapsed: Int) {
         
-        
         if state == .online {
             runOnMainThread {
                 self.chatManager.remoteAudioOnlineStateChange(uid: uid, online: true)
@@ -360,14 +359,14 @@ extension EngineManager: RZRtcChannelDelegate {
         
         if state == .online {
             runOnMainThread {
-                self.chatManager.remoteVideoOnlineStateChange(uid: uid, online: true)
+                self.chatManager.remoteVideoOnlineStateChange(uid: uid, online: true, streamName: streamName)
             }
             return
         }
         
         if state == .offline {
             runOnMainThread {
-                self.chatManager.remoteVideoOnlineStateChange(uid: uid, online: false)
+                self.chatManager.remoteVideoOnlineStateChange(uid: uid, online: false, streamName: streamName)
             }
             return
         }

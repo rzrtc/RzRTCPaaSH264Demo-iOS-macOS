@@ -209,7 +209,7 @@ extension ChannelViewController: VideoChatManagerDelegate {
             return
         }
         let item = EngineManager.sharedEngineManager.chatManager.remoteItem
-        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item,uid: item.uid,streamName: "first");
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item, uid: item.uid,streamName: item.videoState.streamName);
         self.remoteIdLabel.text = "\(item.uid)"
         self.remoteDisplayViewContainer.isHidden = false
     }
