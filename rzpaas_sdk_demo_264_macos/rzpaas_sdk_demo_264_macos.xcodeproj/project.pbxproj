@@ -17,6 +17,8 @@
 		A5356E1525A84AE500CB1527 /* RZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1425A84AE500CB1527 /* RZAlertView.swift */; };
 		A5356E1725A84AFD00CB1527 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5356E1625A84AFD00CB1527 /* RZAlertView.xib */; };
 		A5356E1925A84CD900CB1527 /* RZAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1825A84CD900CB1527 /* RZAlertHelper.swift */; };
+		A540598E25BA678D0089DA8F /* RZPaas_macOS.framework/RZPaas_macOS in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework/RZPaas_macOS */; };
+		A540598F25BA678D0089DA8F /* RZPaas_macOS.framework/RZPaas_macOS in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework/RZPaas_macOS */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A54D3E1225A47213000B23D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E1125A47213000B23D4 /* AppDelegate.swift */; };
 		A54D3E1625A47216000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1525A47216000B23D4 /* Assets.xcassets */; };
 		A54D3E1925A47216000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1725A47216000B23D4 /* Main.storyboard */; };
@@ -24,7 +26,6 @@
 		A5588A5625A7127B0046EE2C /* VideoChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5225A7127B0046EE2C /* VideoChatItem.swift */; };
 		A5588A5725A7127B0046EE2C /* EngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5325A7127B0046EE2C /* EngineManager.swift */; };
 		A5588A5825A7127B0046EE2C /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5425A7127B0046EE2C /* KeyCenter.swift */; };
-		A5E2A58725B9320C00A8625E /* RZPaas_macOS.framework/RZPaas_macOS in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework/RZPaas_macOS */; };
 		A5F26D9825B7D6CC001E965A /* libswscale.pc in Resources */ = {isa = PBXBuildFile; fileRef = A5F26D6A25B7D6CB001E965A /* libswscale.pc */; };
 		A5F26D9925B7D6CC001E965A /* libswresample.pc in Resources */ = {isa = PBXBuildFile; fileRef = A5F26D6B25B7D6CB001E965A /* libswresample.pc */; };
 		A5F26D9A25B7D6CC001E965A /* libavcodec.pc in Resources */ = {isa = PBXBuildFile; fileRef = A5F26D6C25B7D6CB001E965A /* libavcodec.pc */; };
@@ -78,6 +79,20 @@
 			remoteInfo = "sol-library";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A540599025BA678D0089DA8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A540598F25BA678D0089DA8F /* RZPaas_macOS.framework/RZPaas_macOS in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D00B606C743AEA97EC95C4B /* Pods-rzpaas_sdk_demo_264_macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_264_macos.release.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_264_macos/Pods-rzpaas_sdk_demo_264_macos.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,9 +311,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E2A58725B9320C00A8625E /* RZPaas_macOS.framework/RZPaas_macOS in Frameworks */,
 				A5F26DC325B7D739001E965A /* libiconv.tbd in Frameworks */,
 				A5F26DC025B7D733001E965A /* libbz2.tbd in Frameworks */,
+				A540598E25BA678D0089DA8F /* RZPaas_macOS.framework/RZPaas_macOS in Frameworks */,
 				A5F26DBD25B7D72B001E965A /* libz.tbd in Frameworks */,
 				A5F26DA625B7D6CC001E965A /* libyuv.a in Frameworks */,
 				A5F26DA025B7D6CC001E965A /* libavfilter.a in Frameworks */,
@@ -771,6 +786,7 @@
 				A54D3E0B25A47213000B23D4 /* Frameworks */,
 				A54D3E0C25A47213000B23D4 /* Resources */,
 				89E8D1DCF1FC3A84C6FA62D7 /* [CP] Embed Pods Frameworks */,
+				A540599025BA678D0089DA8F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
