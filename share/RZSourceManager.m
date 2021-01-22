@@ -11,6 +11,7 @@
 #import "RZVideoDecoder.h"
 #import <mach/mach_time.h>
 #import "RZVideoPlayView.h"
+#import "libyuv.h"
 
 
 static uint64_t rz_milliseconds(void)
@@ -74,6 +75,46 @@ static uint64_t rz_milliseconds(void)
 }
 
 
+- (void)displayPixelBuffer:(CVPixelBufferRef)pixelBuffer timestamp:(NSTimeInterval)timestamp {
+    if (!pixelBuffer) {
+        return;
+    }
+    
+    CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+    int width = (int)CVPixelBufferGetWidth(pixelBuffer);
+    int height = (int)CVPixelBufferGetHeight(pixelBuffer);
+
+    void *src_y = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0);
+    void *src_uv = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 1);
+    int src_stride_y = (int)CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 0);
+    int src_stride_uv = (int)CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 1);
+    
+    void *i420 = malloc(width * height * 2);
+
+    void *dst_y = i420;
+    void *dst_u = dst_y + width * height;
+    void *dst_v = dst_u + width * height / 4;
+
+    int dst_stride_y = width;
+    int dst_stride_u = width / 2;
+    int dst_stride_v = width / 2;
+
+    NV12ToI420(src_y, src_stride_y,
+               src_uv, src_stride_uv,
+               dst_y, dst_stride_y,
+               dst_u, dst_stride_u,
+               dst_v, dst_stride_v,
+               width, height);
+
+    [self.masterVideoSink renderRawData:i420
+                                   size:CGSizeMake(width, height)
+                            pixelFormat:RZVideoPixelFormatI420
+                              timestamp:timestamp];
+    
+    CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+    free(i420);
+}
+
 - (void)videoCapturer:(RZVideoCapturer *)videoCapturer didReceiveSampleBuffer:(CMSampleBufferRef)sampleBuffer isFromFrontCamera:(BOOL)isFromFrontCamera
 {
     
@@ -81,6 +122,7 @@ static uint64_t rz_milliseconds(void)
     uint64_t timestamp = rz_milliseconds();
     CVPixelBufferRetain(pixelBuffer);
     dispatch_async(self.encodeQueue, ^{
+        [self displayPixelBuffer:pixelBuffer timestamp:timestamp];
         [self.videoEncoder encodeNv12PixelBuffer:pixelBuffer timestamp:timestamp];
         CVPixelBufferRelease(pixelBuffer);
     });
@@ -93,10 +135,6 @@ static uint64_t rz_milliseconds(void)
         [self.masterVideoSource.consumer consumePacket:h264Data length:length bufferType:RZVideoBufferTypeH264 isKeyframe:isKeyFrame timestamp:timestamp];
     }
     
-    //本地预览
-    if (self.masterVideoSink) {
-        [self.masterVideoSink renderPacket:h264Data length:length bufferType:RZVideoBufferTypeH264 keyframe:isKeyFrame timestamp:timestamp];
-    }
 }
 
 

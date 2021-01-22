@@ -126,8 +126,8 @@ extension ChannelViewController {
     }
     
     func backToLoginPage() {
-        self.navigationController?.popViewController(animated: true)                
-        EngineManager.sharedEngineManager.setupLocalVideoCanvas(.init())
+        self.navigationController?.popViewController(animated: true)
+        EngineManager.sharedEngineManager.setLocalVideoRenderer(VideoChatItem.init())
     }
     
 }

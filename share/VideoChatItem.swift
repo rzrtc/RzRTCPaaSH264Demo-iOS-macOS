@@ -19,8 +19,6 @@ import RZPaas_macOS
 typealias VIEW_CLASS = NSView
 #endif
 
-
-
 class VideoChatItem: NSObject {
 
     class StreamState {

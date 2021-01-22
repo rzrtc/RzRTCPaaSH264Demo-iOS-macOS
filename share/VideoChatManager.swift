@@ -61,9 +61,9 @@ class VideoChatManager: NSObject {
     }
     
     func remoteLeave(uid: String) {
-        if self.remoteItem.uid != uid{
-            return
-        }
+        if (self.remoteItem.uid.count != 0) && (self.remoteItem.uid == uid){
+            self.remoteItem.uid = ""
+        }        
     }
     
     

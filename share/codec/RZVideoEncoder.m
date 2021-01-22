@@ -71,7 +71,6 @@
     
     CVPixelBufferLockBaseAddress(pixelBuffer, 0);
     
-    
     int width = (int)CVPixelBufferGetWidth(pixelBuffer);
     int height = (int)CVPixelBufferGetHeight(pixelBuffer);
     
@@ -182,7 +181,7 @@
     _context->framerate = (AVRational){config.fps, 1};
     
     _context->gop_size = 10;
-    _context->max_b_frames = 1;
+    _context->max_b_frames = 0;
     
     av_opt_set(_context->priv_data, "coder", "cabac", 0);
     av_opt_set(_context->priv_data, "x264-params", "ref=1:deblock=1,1:analyse=p8x8:8x8dct=1", 0);
