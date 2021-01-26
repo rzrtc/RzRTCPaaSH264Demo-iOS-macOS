@@ -44,6 +44,7 @@ class VideoChatItem: NSObject {
     override init() {
         super.init()
         self.videoDecoder.delegate = self
+        self.videoPlayView = RZVideoPlayView()
     }
 }
 

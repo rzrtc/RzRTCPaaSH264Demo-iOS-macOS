@@ -13,7 +13,6 @@
                 <outlet property="localDisplayViewContainer" destination="gkM-mj-XQH" id="DGH-Wd-ghJ"/>
                 <outlet property="localIdContainer" destination="vg3-P1-Yca" id="4nm-7o-S7s"/>
                 <outlet property="localIdLabel" destination="eMz-pk-BQW" id="hi9-9d-dqC"/>
-                <outlet property="remoteDisplayView" destination="jas-Tc-aT2" id="Wbc-Z4-C0V"/>
                 <outlet property="remoteDisplayViewContainer" destination="xBW-dB-zcM" id="KOq-Jr-Qaq"/>
                 <outlet property="remoteIdContainer" destination="w7H-2w-Mmj" id="bHG-WU-ofW"/>
                 <outlet property="remoteIdLabel" destination="H9t-6W-LT5" id="3ny-Wz-sdM"/>
@@ -139,17 +138,10 @@
                                         <constraint firstItem="H9t-6W-LT5" firstAttribute="leading" secondItem="w7H-2w-Mmj" secondAttribute="leading" constant="5" id="iX6-FS-ess"/>
                                     </constraints>
                                 </customView>
-                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="jas-Tc-aT2" customClass="RZVideoPlayView">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="488"/>
-                                </customView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="jas-Tc-aT2" secondAttribute="bottom" id="E79-Q6-Jyf"/>
                                 <constraint firstItem="w7H-2w-Mmj" firstAttribute="leading" secondItem="xBW-dB-zcM" secondAttribute="leading" constant="12" id="NBI-yI-ckc"/>
-                                <constraint firstAttribute="trailing" secondItem="jas-Tc-aT2" secondAttribute="trailing" id="XlP-0P-auw"/>
-                                <constraint firstItem="jas-Tc-aT2" firstAttribute="leading" secondItem="xBW-dB-zcM" secondAttribute="leading" id="cCU-Vy-oUQ"/>
                                 <constraint firstItem="w7H-2w-Mmj" firstAttribute="top" secondItem="xBW-dB-zcM" secondAttribute="top" constant="12" id="fOZ-tq-V1y"/>
-                                <constraint firstItem="jas-Tc-aT2" firstAttribute="top" secondItem="xBW-dB-zcM" secondAttribute="top" id="fQk-0g-Hss"/>
                                 <constraint firstAttribute="height" constant="488" id="h0k-Xj-Kxo"/>
                             </constraints>
                         </customView>

@@ -16,7 +16,6 @@ class ChannelViewController: UIViewController{
     @IBOutlet weak var remoteDisplayViewContainer: UIView!
 
     @IBOutlet weak var localDisplayView: RZVideoPlayView!
-    @IBOutlet weak var remoteDisplayView: RZVideoPlayView!
     
     @IBOutlet weak var remoteIdContainer: UIView!{
         didSet {
@@ -52,7 +51,6 @@ class ChannelViewController: UIViewController{
          设置本地用户的视频容器
          */
         engineManager.chatManager.localItem.videoPlayView = self.localDisplayView
-        engineManager.chatManager.remoteItem.videoPlayView = self.remoteDisplayView
         
         engineManager.setLocalVideoRenderer(engineManager.chatManager.localItem)
         
@@ -127,7 +125,7 @@ extension ChannelViewController {
     
     func backToLoginPage() {
         self.navigationController?.popViewController(animated: true)
-        EngineManager.sharedEngineManager.setLocalVideoRenderer(VideoChatItem.init())
+        EngineManager.sharedEngineManager.setLocalVideoRenderer(VideoChatItem.init())        
     }
     
 }
@@ -208,9 +206,15 @@ extension ChannelViewController: VideoChatManagerDelegate {
             self.remoteDisplayViewContainer.isHidden = true
             return
         }
+
         let item = EngineManager.sharedEngineManager.chatManager.remoteItem
-        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item, uid: item.uid,streamName: item.videoState.streamName);
-        self.remoteIdLabel.text = "\(item.uid)"
+        self.remoteDisplayViewContainer.addSubview(item!.videoPlayView)
+        item!.videoPlayView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.remoteDisplayViewContainer)
+        }
+
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item!, uid: item!.uid,streamName: item!.videoState.streamName);
+        self.remoteIdLabel.text = "\(item!.uid)"
         self.remoteDisplayViewContainer.isHidden = false
     }
     

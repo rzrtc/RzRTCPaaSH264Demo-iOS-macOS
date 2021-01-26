@@ -33,12 +33,7 @@ class VideoChatManager: NSObject {
         return item
     }()
     
-    var remoteItem: VideoChatItem = {
-        let item = VideoChatItem.init()
-        item.isLocal = false
-        return item
-    }()
-    
+    var remoteItem: VideoChatItem?    
     
     func localJoin(uid: String) {
         localItem.uid = uid
@@ -50,20 +45,30 @@ class VideoChatManager: NSObject {
      */
     func localLeavel() {
         self.localItem.uid = ""
-        self.remoteItem.uid = ""
+        self.remoteItem = nil
     }
     
     func remoteJoin(uid: String) {
-        if self.remoteItem.uid.count > 0 {
-            return
+        guard (self.remoteItem == nil) else {
+            return;
         }
-        self.remoteItem.uid = uid
+        
+        self.remoteItem = VideoChatItem.init()
+        self.remoteItem?.isLocal = false
+        self.remoteItem?.uid = uid
     }
     
     func remoteLeave(uid: String) {
-        if (self.remoteItem.uid.count != 0) && (self.remoteItem.uid == uid){
-            self.remoteItem.uid = ""
-        }        
+        guard (self.remoteItem != nil) else {
+            return
+        }
+        
+        guard self.remoteItem?.uid == uid else {
+            return
+        }
+        
+        self.remoteItem?.videoPlayView.removeFromSuperview()
+        self.remoteItem = nil
     }
     
     
@@ -81,11 +86,12 @@ class VideoChatManager: NSObject {
     
     
     func remoteVideoOnlineStateChange(uid: String, online: Bool, streamName:String) {
-        if self.remoteItem.uid != uid {
+        guard self.remoteItem?.uid == uid else {
             return
         }
-        self.remoteItem.videoState.online = online
-        self.remoteItem.videoState.streamName = streamName
+        
+        self.remoteItem?.videoState.online = online
+        self.remoteItem?.videoState.streamName = streamName
         self.delegate?.videoOnlineStateChange?(online: online)
     }
     

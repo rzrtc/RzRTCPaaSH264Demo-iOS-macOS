@@ -16,7 +16,6 @@
                 <outlet property="localDisplayViewContainer" destination="skF-p1-hiD" id="LLd-8x-kwC"/>
                 <outlet property="localIdContainer" destination="d9Z-CM-iKs" id="1BE-Kl-Rbd"/>
                 <outlet property="localIdLabel" destination="LJJ-tS-inv" id="Bwx-fT-daI"/>
-                <outlet property="remoteDisplayView" destination="Ztg-LH-d7Z" id="jdU-V9-YFR"/>
                 <outlet property="remoteDisplayViewContainer" destination="xe1-KG-9Qi" id="YEt-Ho-nKi"/>
                 <outlet property="remoteIdContainer" destination="G5C-yJ-5qc" id="mje-AZ-CNS"/>
                 <outlet property="remoteIdLabel" destination="nny-Md-TT1" id="Sw8-yy-caa"/>

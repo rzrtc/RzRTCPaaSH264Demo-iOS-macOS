@@ -22,24 +22,10 @@ class VideoChatViewController: NSViewController {
     @IBOutlet weak var remoteDisplayViewContainer: NSView!
 
     @IBOutlet weak var localDisplayView: RZVideoPlayView!
-    @IBOutlet weak var remoteDisplayView: RZVideoPlayView!
     
-    @IBOutlet weak var remoteIdContainer: NSView!{
-        didSet {
-//            self.remoteIdContainer.wantsLayer = true;
-//            self.remoteIdContainer.layer?.backgroundColor = NSColor.init(red: 56, green: 69, blue: 93, alpha: 0.45).cgColor
-//            self.remoteIdContainer.layer?.cornerRadius = 12.0;
-//            self.remoteIdContainer.layer?.masksToBounds = true;
-        }
-    }
-    @IBOutlet weak var localIdContainer: NSView!{
-        didSet {
-//            self.localIdContainer.wantsLayer = true;
-//            self.localIdContainer.layer?.backgroundColor = NSColor.init(red: 56, green: 69, blue: 93, alpha: 0.45).cgColor
-//            self.localIdContainer.layer?.cornerRadius = 12.0;
-//            self.localIdContainer.layer?.masksToBounds = true;
-        }
-    }
+    @IBOutlet weak var remoteIdContainer: NSView!
+    
+    @IBOutlet weak var localIdContainer: NSView!
 
     @IBOutlet weak var localIdLabel: NSTextField!
     @IBOutlet weak var remoteIdLabel: NSTextField!
@@ -62,7 +48,6 @@ class VideoChatViewController: NSViewController {
          设置本地用户的视频容器
          */
         engineManager.chatManager.localItem.videoPlayView = self.localDisplayView
-        engineManager.chatManager.remoteItem.videoPlayView = self.remoteDisplayView
                 
         engineManager.setLocalVideoRenderer(engineManager.chatManager.localItem)
         
@@ -108,10 +93,14 @@ extension VideoChatViewController: VideoChatManagerDelegate {
             self.remoteDisplayViewContainer.isHidden = true
             return
         }
-
+        
         let item = EngineManager.sharedEngineManager.chatManager.remoteItem
-        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item,uid: item.uid,streamName: item.videoState.streamName);
-        self.remoteIdLabel.stringValue = "\(item.uid)"        
+        self.remoteDisplayViewContainer.addSubview(item!.videoPlayView)        
+        item!.videoPlayView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.remoteDisplayViewContainer)
+        }
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item!,uid: item!.uid,streamName: item!.videoState.streamName);
+        self.remoteIdLabel.stringValue = "\(item!.uid)"
         self.remoteDisplayViewContainer.isHidden = false
     }
     
