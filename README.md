@@ -1,6 +1,6 @@
 # rzpaas_sdk_demo_264_apple
 
-a demo shows how to use rzpaas sdk in iOS/macOS platform.
+展示RZPaasSDK如何使用外部H264的自定义数据源
 
 # sdk [下载地址](https://docs.rzrtc.com/docs/paas/download/)
 

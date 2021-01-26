@@ -1,20 +1,28 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.6)
+  - RZPaas_iOS (1.1.1)
+  - RZPaas_macOS (1.1.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (~> 6.5.6)
+  - RZPaas_iOS (~> 1.1.1)
+  - RZPaas_macOS (~> 1.1.1)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - RZPaas_iOS
+    - RZPaas_macOS
     - SnapKit
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  RZPaas_iOS: d6699614eb31e3c223fd70d4b9348a54742b63df
+  RZPaas_macOS: b526d8c78c47a9c437dbc6eae2a3e5d4750b865e
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 95739c42c51d479bbaa3353f069fe1320e1858c6
+PODFILE CHECKSUM: 54b0f68090db2762119bbbf4559b5b1fd3cd9847
 
 COCOAPODS: 1.10.0

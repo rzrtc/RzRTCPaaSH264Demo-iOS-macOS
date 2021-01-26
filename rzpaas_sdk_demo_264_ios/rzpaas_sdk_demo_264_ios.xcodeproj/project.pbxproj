@@ -22,8 +22,6 @@
 		A5AB7A9C25A7F8E4006CF0B6 /* RZAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB7A9B25A7F8E4006CF0B6 /* RZAlertHelper.swift */; };
 		A5AB7A9E25A7F8FE006CF0B6 /* RZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB7A9D25A7F8FE006CF0B6 /* RZAlertView.swift */; };
 		A5AB7AA025A7F912006CF0B6 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AB7A9F25A7F912006CF0B6 /* RZAlertView.xib */; };
-		A5E2A55625B91F0B00A8625E /* RZPaas_iOS.framework/RZPaas_iOS in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F26E1225B91E50001E965A /* RZPaas_iOS.framework/RZPaas_iOS */; };
-		A5E2A55725B91F0B00A8625E /* RZPaas_iOS.framework/RZPaas_iOS in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5F26E1225B91E50001E965A /* RZPaas_iOS.framework/RZPaas_iOS */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5F26C1C25B7D3CE001E965A /* RZVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26C1225B7D3CE001E965A /* RZVideoEncoder.m */; };
 		A5F26C1D25B7D3CE001E965A /* RZVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26C1325B7D3CE001E965A /* RZVideoDecoder.m */; };
 		A5F26C1E25B7D3CE001E965A /* RZVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26C1625B7D3CE001E965A /* RZVideoPlayView.m */; };
@@ -45,37 +43,6 @@
 		A5F26DFC25B915A0001E965A /* RZMVideoSourceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F26DFA25B9159E001E965A /* RZMVideoSourceImp.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A5E2A54125B91EE500A8625E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1BEA86946F5A43BB9B4C768F;
-			remoteInfo = RZPaas_iOS;
-		};
-		A5F26E1125B91E50001E965A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6340CBDC1FEC4D628F1FA3D6;
-			remoteInfo = RZPaas_iOS;
-		};
-		A5F26E1325B91E50001E965A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEA529941911425292785117;
-			remoteInfo = "mn-library";
-		};
-		A5F26E1525B91E50001E965A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D43BE01582CF45E1BD2F4D97;
-			remoteInfo = "sol-library";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A5E2A55825B91F0B00A8625E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -83,7 +50,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A5E2A55725B91F0B00A8625E /* RZPaas_iOS.framework/RZPaas_iOS in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +249,6 @@
 		A5F26DF925B9159E001E965A /* RZSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSourceManager.m; sourceTree = "<group>"; };
 		A5F26DFA25B9159E001E965A /* RZMVideoSourceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMVideoSourceImp.m; sourceTree = "<group>"; };
 		A5F26DFF25B91686001E965A /* rzpaas_sdk_demo_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rzpaas_sdk_demo_ios-Bridging-Header.h"; sourceTree = "<group>"; };
-		A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PaaSSDK.xcodeproj; path = "../../rzpaas-test-apple/rzpaas-sdk-apple/RZPaas/Classes/rz-paas-sdk/ios_build/PaaSSDK.xcodeproj"; sourceTree = "<group>"; };
 		C04CE988E30C580EB66148E0 /* Pods-rzpaas_sdk_demo_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_ios.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_ios/Pods-rzpaas_sdk_demo_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D80646FF4017DF73877854F2 /* Pods-rzpaas_sdk_demo_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_ios.release.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_ios/Pods-rzpaas_sdk_demo_ios.release.xcconfig"; sourceTree = "<group>"; };
 		DF14570C6D0E8D05555B811B /* Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_264_ios/Pods-rzpaas_sdk_demo_264_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,7 +265,6 @@
 				A5F26CCF25B7D482001E965A /* libavfilter.a in Frameworks */,
 				A5F26CCE25B7D482001E965A /* libavutil.a in Frameworks */,
 				A5F26CD625B7D482001E965A /* libyuv.a in Frameworks */,
-				A5E2A55625B91F0B00A8625E /* RZPaas_iOS.framework/RZPaas_iOS in Frameworks */,
 				A5F26CD525B7D482001E965A /* libx264.a in Frameworks */,
 				A5F26CD125B7D482001E965A /* libpostproc.a in Frameworks */,
 				A5F26CD225B7D482001E965A /* libavformat.a in Frameworks */,
@@ -329,7 +293,6 @@
 		A54D3DE425A47180000B23D4 = {
 			isa = PBXGroup;
 			children = (
-				A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */,
 				A5588A5925A712A90046EE2C /* share */,
 				A54D3DEF25A47180000B23D4 /* rzpaas_sdk_demo_ios */,
 				A54D3DEE25A47180000B23D4 /* Products */,
@@ -710,16 +673,6 @@
 			path = libyuv;
 			sourceTree = "<group>";
 		};
-		A5F26E0A25B91E50001E965A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A5F26E1225B91E50001E965A /* RZPaas_iOS.framework/RZPaas_iOS */,
-				A5F26E1425B91E50001E965A /* libmn-library.a */,
-				A5F26E1625B91E50001E965A /* libsol-library.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -737,7 +690,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A5E2A54225B91EE500A8625E /* PBXTargetDependency */,
 			);
 			name = rzpaas_sdk_demo_264_ios;
 			productName = rzpaas_sdk_demo_ios;
@@ -769,43 +721,12 @@
 			mainGroup = A54D3DE425A47180000B23D4;
 			productRefGroup = A54D3DEE25A47180000B23D4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A5F26E0A25B91E50001E965A /* Products */;
-					ProjectRef = A5F26E0925B91E50001E965A /* PaaSSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A54D3DEC25A47180000B23D4 /* rzpaas_sdk_demo_264_ios */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A5F26E1225B91E50001E965A /* RZPaas_iOS.framework/RZPaas_iOS */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			name = RZPaas_iOS.framework/RZPaas_iOS;
-			path = RZPaas_iOS.framework;
-			remoteRef = A5F26E1125B91E50001E965A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5F26E1425B91E50001E965A /* libmn-library.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libmn-library.a";
-			remoteRef = A5F26E1325B91E50001E965A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5F26E1625B91E50001E965A /* libsol-library.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libsol-library.a";
-			remoteRef = A5F26E1525B91E50001E965A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A54D3DEB25A47180000B23D4 /* Resources */ = {
@@ -889,14 +810,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A5E2A54225B91EE500A8625E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RZPaas_iOS;
-			targetProxy = A5E2A54125B91EE500A8625E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A54D3DF625A47180000B23D4 /* Main.storyboard */ = {

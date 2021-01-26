@@ -17,8 +17,6 @@
 		A5356E1525A84AE500CB1527 /* RZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1425A84AE500CB1527 /* RZAlertView.swift */; };
 		A5356E1725A84AFD00CB1527 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5356E1625A84AFD00CB1527 /* RZAlertView.xib */; };
 		A5356E1925A84CD900CB1527 /* RZAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1825A84CD900CB1527 /* RZAlertHelper.swift */; };
-		A540598E25BA678D0089DA8F /* RZPaas_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework */; };
-		A540598F25BA678D0089DA8F /* RZPaas_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A54D3E1225A47213000B23D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E1125A47213000B23D4 /* AppDelegate.swift */; };
 		A54D3E1625A47216000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1525A47216000B23D4 /* Assets.xcassets */; };
 		A54D3E1925A47216000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1725A47216000B23D4 /* Main.storyboard */; };
@@ -56,30 +54,6 @@
 		BEFFD34C8F165727040DE01C /* Pods_rzpaas_sdk_demo_264_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B73DA879213DE1199E03866 /* Pods_rzpaas_sdk_demo_264_macos.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A5E2A57B25B931E400A8625E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 43D0765D56AA4BFA90D8D6D3;
-			remoteInfo = RZPaas_macOS;
-		};
-		A5E2A57D25B931E400A8625E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D05FECE64E8A4A0E8A6072F9;
-			remoteInfo = "mn-library";
-		};
-		A5E2A57F25B931E400A8625E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AB7EABD649974890BAAAB4EF;
-			remoteInfo = "sol-library";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A540599025BA678D0089DA8F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -87,7 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A540598F25BA678D0089DA8F /* RZPaas_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +95,6 @@
 		A5588A5225A7127B0046EE2C /* VideoChatItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatItem.swift; sourceTree = "<group>"; };
 		A5588A5325A7127B0046EE2C /* EngineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineManager.swift; sourceTree = "<group>"; };
 		A5588A5425A7127B0046EE2C /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
-		A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PaaSSDK.xcodeproj; path = "../../rzpaas-test-apple/rzpaas-sdk-apple/RZPaas/Classes/rz-paas-sdk/build/PaaSSDK.xcodeproj"; sourceTree = "<group>"; };
 		A5F26CE725B7D6CB001E965A /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		A5F26CE825B7D6CB001E965A /* postprocess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = postprocess.h; sourceTree = "<group>"; };
 		A5F26CEA25B7D6CB001E965A /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
@@ -313,7 +285,6 @@
 			files = (
 				A5F26DC325B7D739001E965A /* libiconv.tbd in Frameworks */,
 				A5F26DC025B7D733001E965A /* libbz2.tbd in Frameworks */,
-				A540598E25BA678D0089DA8F /* RZPaas_macOS.framework in Frameworks */,
 				A5F26DBD25B7D72B001E965A /* libz.tbd in Frameworks */,
 				A5F26DA625B7D6CC001E965A /* libyuv.a in Frameworks */,
 				A5F26DA025B7D6CC001E965A /* libavfilter.a in Frameworks */,
@@ -371,7 +342,6 @@
 		A54D3E0525A47213000B23D4 = {
 			isa = PBXGroup;
 			children = (
-				A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */,
 				A5588A5025A7127B0046EE2C /* share */,
 				A54D3E1025A47213000B23D4 /* rzpaas_sdk_demo_macos */,
 				A54D3E0F25A47213000B23D4 /* Products */,
@@ -420,16 +390,6 @@
 			);
 			name = share;
 			path = ../share;
-			sourceTree = "<group>";
-		};
-		A5E2A57425B931E400A8625E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework */,
-				A5E2A57E25B931E400A8625E /* libmn-library.a */,
-				A5E2A58025B931E400A8625E /* libsol-library.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A5F26CE325B7D69A001E965A /* Vendor */ = {
@@ -823,42 +783,12 @@
 			mainGroup = A54D3E0525A47213000B23D4;
 			productRefGroup = A54D3E0F25A47213000B23D4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A5E2A57425B931E400A8625E /* Products */;
-					ProjectRef = A5E2A57325B931E400A8625E /* PaaSSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A54D3E0D25A47213000B23D4 /* rzpaas_sdk_demo_264_macos */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A5E2A57C25B931E400A8625E /* RZPaas_macOS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RZPaas_macOS.framework;
-			remoteRef = A5E2A57B25B931E400A8625E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5E2A57E25B931E400A8625E /* libmn-library.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libmn-library.a";
-			remoteRef = A5E2A57D25B931E400A8625E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5E2A58025B931E400A8625E /* libsol-library.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libsol-library.a";
-			remoteRef = A5E2A57F25B931E400A8625E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A54D3E0C25A47213000B23D4 /* Resources */ = {
