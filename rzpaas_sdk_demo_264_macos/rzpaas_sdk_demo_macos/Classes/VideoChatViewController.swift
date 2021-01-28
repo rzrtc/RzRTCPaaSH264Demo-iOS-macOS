@@ -95,7 +95,7 @@ extension VideoChatViewController: VideoChatManagerDelegate {
         }
         
         let item = EngineManager.sharedEngineManager.chatManager.remoteItem
-        self.remoteDisplayViewContainer.addSubview(item!.videoPlayView)        
+        self.remoteDisplayViewContainer.addSubview(item!.videoPlayView, positioned: .below, relativeTo: self.remoteIdContainer)        
         item!.videoPlayView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.remoteDisplayViewContainer)
         }
