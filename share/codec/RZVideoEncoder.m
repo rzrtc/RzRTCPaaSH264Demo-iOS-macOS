@@ -13,7 +13,7 @@
 #include <libavutil/imgutils.h>
 #include <libavutil/opt.h>
 #include <libswscale/swscale.h>
-
+#import <OSLog/OSLog.h>
 
 
 @implementation RZVideoEncodeConfig
@@ -128,16 +128,18 @@
     
     int ret = avcodec_send_frame(_context, _frame);
     if (ret < 0) {
+        os_log_error(OS_LOG_DEFAULT, "avcodec_send_frame failed %d", ret);
         return;
     }
     
     while (ret >= 0) {
         ret = avcodec_receive_packet(_context, _pkt);
-        if (ret == AVERROR((EAGAIN) || ret == AVERROR_EOF)) {
+        if (ret == AVERROR((EAGAIN)) || ret == AVERROR_EOF) {
             return;
         }
-
+        
         if (ret < 0) {
+            os_log_error(OS_LOG_DEFAULT, "avcodec_receive_packet failed %d", ret);
             return;
         }
         
@@ -162,11 +164,13 @@
     
     _codec = avcodec_find_encoder(AV_CODEC_ID_H264);
     if (!_codec) {
+        os_log_error(OS_LOG_DEFAULT, "avcodec_find_encoder: AV_CODEC_ID_H264 failed");
         return NO;
     }
     
     _context = avcodec_alloc_context3(_codec);
     if (!_context) {
+        os_log_error(OS_LOG_DEFAULT, "avcodec_alloc_context3 failed");
         return NO;
     }
     
@@ -231,17 +235,20 @@
     
     _pkt = av_packet_alloc();
     if (!_pkt) {
+        os_log_error(OS_LOG_DEFAULT, "av_packet_alloc failed");
         return NO;
     }
         
     _frame = av_frame_alloc();
     if (!_frame) {
+        os_log_error(OS_LOG_DEFAULT, "av_frame_alloc failed");
         return NO;
     }
     _pts = 1;
     _setupSuccess = YES;
     return YES;
 }
+
 
 - (void)destory {
     if (_context) {
